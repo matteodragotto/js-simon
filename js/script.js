@@ -7,6 +7,7 @@ const fourthNumber = document.getElementById('fourth-number')
 const fifthNumber = document.getElementById('fifth-number')
 const verifyNumber = document.querySelector('.form')
 const reset = document.querySelector('.reset')
+const message = document.getElementById('result')
 
 const numbers = document.getElementById('random-numbers')
 const countDown = document.getElementById('countdown')
@@ -54,7 +55,11 @@ verifyNumber.addEventListener('submit', (event) => {
 
   inputArray.push(firstValue, secondValue, thirdValue, fourthValue, fifthValue)
 
+  message.innerText = 'Numeri indovinati:' + rightAnswer(uniqueRandomNumbers, inputArray)
+
   console.log(inputArray);
+
+  console.log(rightAnswer(uniqueRandomNumbers, inputArray));
 })
 
 function rightAnswer (startingArray, userArray) {
@@ -67,7 +72,7 @@ function rightAnswer (startingArray, userArray) {
   return rightAnswerCount
 }
 
-console.log(rightAnswer(uniqueRandomNumbers, inputArray));
+
 
 
 
