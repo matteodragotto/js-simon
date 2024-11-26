@@ -23,3 +23,5 @@
 3. Creo un conto alla rovescia tramite la programmazione asincrona (setInterval?)
 3. Al load della pagina appariranno i 5 numeri generati casualmente in pagina e il conto alla rovescia quindi stampo il mio array e l'interval in pagina
 4. Alla fine del conto alla rovescia questa prima parte scompare e appare il form dove inserire i numeri da ricordare (il termine del conto alla rovescia determina la rimozione/aggiunta di un classe hide per rimuovere il primo elemento)
+5. Una volta inseriti i numeri negli input, questi numeri saranno inseriti in un nuovo array e verranno quindi paragonati i 2 array
+6. In base a quanti numeri del secondo array sono uguali al primo verranno trasmessi dei messaggi all'utente
