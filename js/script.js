@@ -41,6 +41,8 @@ const intervalId = setInterval (() => {
 
 numbers.innerText = uniqueRandomNumbers
 
+let inputArray = []
+
 verifyNumber.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -48,14 +50,29 @@ verifyNumber.addEventListener('submit', (event) => {
   secondValue = parseInt(secondNumber.value.trim())
   thirdValue = parseInt(thirdNumber.value.trim())
   fourthValue = parseInt(fourthNumber.value.trim())
-  fifthValue = parseInt(fifthNumber.value.trim())
-
-  let inputArray = []
+  fifthValue = parseInt(fifthNumber.value.trim())  
 
   inputArray.push(firstValue, secondValue, thirdValue, fourthValue, fifthValue)
 
   console.log(inputArray);
 })
+
+function rightAnswer (startingArray, userArray) {
+  let rightAnswerCount = 0
+  for (i = 0; i < startingArray.length; i++) {
+    if (userArray.includes(startingArray[i])) {
+      rightAnswerCount++
+    }    
+  }
+  return rightAnswerCount
+}
+
+console.log(rightAnswer(uniqueRandomNumbers, inputArray));
+
+
+
+
+
 
 
 
