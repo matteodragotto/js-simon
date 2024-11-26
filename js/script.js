@@ -1,6 +1,16 @@
-function randomNumberGenerator () {
-  const randomNumber = Math.ceil(Math.random () * 50)
-  return randomNumber;  
+let uniqueRandomNumbers = []
+
+while (uniqueRandomNumbers.length < 5) {
+  let randomNumber = randomNumberGenerator();
+
+  if (!uniqueRandomNumbers.includes(randomNumber)) {
+    uniqueRandomNumbers.push(randomNumber)
+  }
 }
 
-console.log(randomNumberGenerator());
+console.log(uniqueRandomNumbers);
+
+function randomNumberGenerator () {    
+  return Math.ceil(Math.random () * 50)
+}
+
