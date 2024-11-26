@@ -40,7 +40,7 @@ const intervalId = setInterval (() => {
   } 
 }, 1000)
 
-numbers.innerText = uniqueRandomNumbers
+numbers.innerText = uniqueRandomNumbers.join(' - ')
 
 let inputArray = []
 
