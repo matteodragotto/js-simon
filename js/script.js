@@ -27,16 +27,14 @@ while (uniqueRandomNumbers.length < 5) {
   }
 }
 
-console.log(uniqueRandomNumbers);
-
 
 const intervalId = setInterval (() => {
   counter--
   countDown.innerText = counter
   if ( counter <= 0) {
     clearInterval(intervalId);
-    memorize.classList.toggle('hide')
-    input.classList.toggle('hide')
+    memorize.classList.add('d-none')
+    input.classList.remove('d-none')
   } 
 }, 1000)
 
@@ -57,9 +55,6 @@ verifyNumber.addEventListener('submit', (event) => {
 
   message.innerText = 'Numeri indovinati:' + rightAnswer(uniqueRandomNumbers, inputArray)
 
-  console.log(inputArray);
-
-  console.log(rightAnswer(uniqueRandomNumbers, inputArray));
 })
 
 function rightAnswer (startingArray, userArray) {
