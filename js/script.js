@@ -27,6 +27,8 @@ while (uniqueRandomNumbers.length < 5) {
   }
 }
 
+console.log(uniqueRandomNumbers);
+
 
 const intervalId = setInterval (() => {
   counter--
@@ -52,8 +54,17 @@ verifyNumber.addEventListener('submit', (event) => {
   fifthValue = parseInt(fifthNumber.value.trim())  
 
   inputArray.push(firstValue, secondValue, thirdValue, fourthValue, fifthValue)
-
-  message.innerText = 'Numeri indovinati:' + rightAnswer(uniqueRandomNumbers, inputArray)
+  
+  if (rightAnswer(uniqueRandomNumbers, inputArray) < 5 && rightAnswer(uniqueRandomNumbers, inputArray) >= 1) {
+    message.innerText = 'Numeri indovinati:' + rightAnswer(uniqueRandomNumbers, inputArray)
+  } else if (rightAnswer(uniqueRandomNumbers, inputArray) === 5) {
+    message.classList.add('text-success')
+    message.innerText = 'Hai vinto!!'
+  } else if (rightAnswer(uniqueRandomNumbers, inputArray) === 0) {
+    message.classList.add('text-danger')
+    message.innerText = 'Hai perso!!'
+  }
+  
 
 })
 
